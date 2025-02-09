@@ -19,7 +19,10 @@ int main(HMODULE moduleHandle) {
         // it doesn't use all of the CPU's processing power
         Sleep(16);
 
-        if (GetAsyncKeyState(VK_F5) & 0x8000) {
+        if (contraption == 0)
+            contraption = *reinterpret_cast<DWORD64*>(baseAddr + 0x1267538);
+
+        if (contraption && GetAsyncKeyState(VK_F5) & 0x8000) {
             *reinterpret_cast<char*>(contraption + 0x299) = 1;
         }
 
