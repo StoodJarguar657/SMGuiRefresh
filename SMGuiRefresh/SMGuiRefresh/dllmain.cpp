@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include <functional>
 
 int main(HMODULE moduleHandle) {
 
@@ -12,8 +11,11 @@ int main(HMODULE moduleHandle) {
         // Dont use all the cpu
         Sleep(1);
 
-        if (GetAsyncKeyState(VK_F5) & 0x8000) {
-            // Function @ 0x2DA080 -> resizeContent(Contraption, HWND)
+        if (contraption == 0)
+            contraption = *reinterpret_cast<DWORD64*>(baseAddr + 0x1267538);
+
+        if (contraption && GetAsyncKeyState(VK_F5) & 0x8000) {
+            // Function @ 0x2DA080 -> resizeContent(Contraption, force)
             // 
             // Cut down disassembly:
             // if (*(_BYTE*)(Contraption + 0x299)) {
