@@ -1,5 +1,4 @@
 #include <Windows.h>
-#include <functional>
 
 int main(HMODULE moduleHandle) {
 
