@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ScrappySM/CarbonLauncher/refs/heads/main/schema.json",
+
+  "name": "SMGuiRefresh",
+  "url": "https://github.com/StoodJarguar657",
+
+  "authors": [
+    "StoodJarguar657"
+  ],
+
+  "description": "Binds F5 to refresh the InGame GUI/textures"
+}
